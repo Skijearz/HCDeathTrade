@@ -1,0 +1,10 @@
+name: HardcoreDeathTrade
+version: 0.0.1
+author: Skijearz
+main: me.skijearz.hcDeathTrade.HardcoreDeathTrade
+api-version: 1.15
+
+commands:
+  deathTrade:
+    description: Opens your DeathTrade Inventory, only works while in spectator mode.
+    usage: /<command>
