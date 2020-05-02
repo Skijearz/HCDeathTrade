@@ -30,6 +30,8 @@ public class ServerJoinListenerRespawner implements Listener {
      */
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent e){
+        e.getPlayer().sendMessage(ChatColor.RED + "[HCDeathTrade] " + ChatColor.WHITE +"Behalte Diamanten, im Inventar um im Falle deines Todes");
+        e.getPlayer().sendMessage(ChatColor.RED + "[HCDeathTrade] " + ChatColor.WHITE +"die Zeit zum respawnen zu verkürzen!");
         if(!e.getPlayer().getPersistentDataContainer().has(this.HardCoreDeathTradeInstance.getDeathTimeKey(), PersistentDataType.LONG)){
             e.getPlayer().getPersistentDataContainer().set(this.HardCoreDeathTradeInstance.getDeathTimeKey(),PersistentDataType.LONG,0L);
 
