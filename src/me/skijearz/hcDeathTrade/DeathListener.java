@@ -31,6 +31,8 @@ public class DeathListener implements Listener {
         incrementDeathCount(e.getEntity().getPlayer());
         setDeathTime(e.getEntity().getPlayer());
         Bukkit.broadcastMessage(ChatColor.RED + "[HCDeathTrade] " + ChatColor.GREEN + e.getEntity().getName() + ChatColor.WHITE + " ist bereits " + ChatColor.RED + getDeathCount(e.getEntity().getPlayer()) + ChatColor.WHITE + " mal gestorben!");
+        e.getEntity().getPlayer().sendMessage(ChatColor.RED + "[HCDeathTrade] " + ChatColor.WHITE +"Benutze /deathtrade, um deinen Respawn zu kaufen!");
+        e.getEntity().getPlayer().sendMessage(ChatColor.RED + "[HCDeathTrade] " + ChatColor.WHITE +"Oder warte bis zum nächsten Tag!");
 
     }
 
@@ -53,8 +55,8 @@ public class DeathListener implements Listener {
         /**
          * TODO: Maybe add config support to set the deathTime to a user-choice time
          */
-        //Long timeUntilRespawn = (System.currentTimeMillis()/1000)+Math.abs((LocalTime.now().toSecondOfDay())-86400);
-        p.getPersistentDataContainer().set(this.HardCoreDeathTradeInstance.getDeathTimeKey(),PersistentDataType.LONG,(System.currentTimeMillis()/1000)+25);
+        Long timeUntilRespawn = (System.currentTimeMillis()/1000)+Math.abs((LocalTime.now().toSecondOfDay())-86400);
+        p.getPersistentDataContainer().set(this.HardCoreDeathTradeInstance.getDeathTimeKey(),PersistentDataType.LONG,timeUntilRespawn);
     }
 
     /**
