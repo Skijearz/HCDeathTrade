@@ -31,7 +31,7 @@ public class DeathTradeCommand implements CommandExecutor {
         if(commandSender instanceof Player){
             Player p = (Player) commandSender;
             if(p.getGameMode().equals(GameMode.SPECTATOR)){
-                DeathTradeInventory dt = new DeathTradeInventory(this.HardCoreDeathTradeInstance);
+                DeathTradeInventory dt = new DeathTradeInventory(this.HardCoreDeathTradeInstance,p);
                 dt.openInventory(p);
                 return true;
             }
